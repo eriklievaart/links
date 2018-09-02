@@ -6,8 +6,8 @@ import java.util.Map;
 
 import javax.swing.JOptionPane;
 
-import com.eriklievaart.toolkit.lang.collection.NewCollection;
-import com.eriklievaart.toolkit.lang.str.Str;
+import com.eriklievaart.toolkit.lang.api.collection.NewCollection;
+import com.eriklievaart.toolkit.lang.api.str.Str;
 import com.google.inject.Inject;
 
 import links.model.Link;

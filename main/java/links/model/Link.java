@@ -1,6 +1,6 @@
 package links.model;
 
-import com.eriklievaart.toolkit.lang.check.Check;
+import com.eriklievaart.toolkit.lang.api.check.Check;
 
 public class Link implements Comparable<Link> {
 	private static final String UNKNOWN_CATEGORY = "unknown";

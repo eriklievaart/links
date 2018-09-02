@@ -4,9 +4,9 @@ import java.io.File;
 
 import links.ui.main.MainController;
 
-import com.eriklievaart.toolkit.io.JvmPaths;
-import com.eriklievaart.toolkit.swing.SwingThread;
-import com.eriklievaart.toolkit.swing.WindowSaver;
+import com.eriklievaart.toolkit.io.api.JvmPaths;
+import com.eriklievaart.toolkit.swing.api.SwingThread;
+import com.eriklievaart.toolkit.swing.api.WindowSaver;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 

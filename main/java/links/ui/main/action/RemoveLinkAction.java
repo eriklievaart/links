@@ -6,7 +6,7 @@ import links.model.Link;
 import links.model.LinkManager;
 import links.ui.main.MainComponents;
 
-import com.eriklievaart.toolkit.swing.menu.Command;
+import com.eriklievaart.toolkit.swing.api.menu.Command;
 import com.google.inject.Inject;
 
 public class RemoveLinkAction {

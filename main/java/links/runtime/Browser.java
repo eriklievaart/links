@@ -3,8 +3,8 @@ package links.runtime;
 import java.awt.Desktop;
 import java.net.URI;
 
-import com.eriklievaart.toolkit.runtime.Command;
-import com.eriklievaart.toolkit.runtime.CommandInvoker;
+import com.eriklievaart.toolkit.runtime.api.CliCommand;
+import com.eriklievaart.toolkit.runtime.api.CliInvoker;
 
 public class Browser {
 
@@ -23,7 +23,7 @@ public class Browser {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				CommandInvoker.invoke(Command.from(CHROME_LINUX + " " + url));
+				CliInvoker.invoke(CliCommand.from(CHROME_LINUX + " " + url));
 			}
 		}).start();
 	}

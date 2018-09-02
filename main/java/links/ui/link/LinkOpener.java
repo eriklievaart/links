@@ -2,11 +2,11 @@ package links.ui.link;
 
 import java.io.File;
 
-import com.eriklievaart.toolkit.io.SystemClipboard;
-import com.eriklievaart.toolkit.lang.check.CheckFile;
-import com.eriklievaart.toolkit.lang.FormattedException;
-import com.eriklievaart.toolkit.lang.str.Str;
-import com.eriklievaart.toolkit.logging.LogTemplate;
+import com.eriklievaart.toolkit.io.api.SystemClipboard;
+import com.eriklievaart.toolkit.io.api.CheckFile;
+import com.eriklievaart.toolkit.lang.api.FormattedException;
+import com.eriklievaart.toolkit.lang.api.str.Str;
+import com.eriklievaart.toolkit.logging.api.LogTemplate;
 
 import com.google.inject.Inject;
 

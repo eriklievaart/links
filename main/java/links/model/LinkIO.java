@@ -7,12 +7,12 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
-import com.eriklievaart.toolkit.io.JvmPaths;
-import com.eriklievaart.toolkit.io.ini.IniNode;
-import com.eriklievaart.toolkit.io.ini.IniNodeIO;
-import com.eriklievaart.toolkit.lang.collection.NewCollection;
-import com.eriklievaart.toolkit.lang.str.Str;
-import com.eriklievaart.toolkit.logging.LogTemplate;
+import com.eriklievaart.toolkit.io.api.JvmPaths;
+import com.eriklievaart.toolkit.io.api.ini.IniNode;
+import com.eriklievaart.toolkit.io.api.ini.IniNodeIO;
+import com.eriklievaart.toolkit.lang.api.collection.NewCollection;
+import com.eriklievaart.toolkit.lang.api.str.Str;
+import com.eriklievaart.toolkit.logging.api.LogTemplate;
 
 public class LinkIO {
 	private static final LogTemplate log = new LogTemplate(LinkIO.class);

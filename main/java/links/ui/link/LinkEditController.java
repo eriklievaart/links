@@ -10,7 +10,7 @@ import links.model.Link;
 import links.ui.link.action.PreviewLinkAction;
 import links.ui.link.action.SaveLinkAction;
 
-import com.eriklievaart.toolkit.swing.menu.ReflectionActionBuilder;
+import com.eriklievaart.toolkit.swing.api.menu.ReflectionActionBuilder;
 import com.google.inject.Inject;
 
 public class LinkEditController {

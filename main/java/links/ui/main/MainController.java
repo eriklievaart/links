@@ -22,7 +22,7 @@ import links.ui.main.action.PasswordLinkAction;
 import links.ui.main.action.RemoveLinkAction;
 import links.ui.observer.ListObserver;
 
-import com.eriklievaart.toolkit.swing.menu.ReflectionActionBuilder;
+import com.eriklievaart.toolkit.swing.api.menu.ReflectionActionBuilder;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 

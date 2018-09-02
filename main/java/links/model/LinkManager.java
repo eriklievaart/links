@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import com.eriklievaart.toolkit.logging.LogTemplate;
-import com.eriklievaart.toolkit.lang.ObservableDelegate;
-import com.eriklievaart.toolkit.lang.check.Check;
-import com.eriklievaart.toolkit.lang.collection.NewCollection;
+import com.eriklievaart.toolkit.logging.api.LogTemplate;
+import com.eriklievaart.toolkit.lang.api.ObservableDelegate;
+import com.eriklievaart.toolkit.lang.api.check.Check;
+import com.eriklievaart.toolkit.lang.api.collection.NewCollection;
 import com.google.inject.Singleton;
 
 @Singleton

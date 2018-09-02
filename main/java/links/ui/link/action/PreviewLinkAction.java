@@ -1,6 +1,6 @@
 package links.ui.link.action;
 
-import com.eriklievaart.toolkit.swing.menu.Command;
+import com.eriklievaart.toolkit.swing.api.menu.Command;
 import com.google.inject.Inject;
 
 import links.model.Link;
