@@ -1,4 +1,4 @@
-package boot;
+package com.eriklievaart.links.boot;
 
 import java.io.File;
 

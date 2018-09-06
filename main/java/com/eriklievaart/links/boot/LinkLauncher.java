@@ -1,4 +1,4 @@
-package boot;
+package com.eriklievaart.links.boot;
 
 import java.awt.Desktop;
 import java.net.URI;
