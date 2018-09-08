@@ -1,12 +1,10 @@
 package links.model;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-
+import com.eriklievaart.toolkit.io.api.FileTool;
 import com.eriklievaart.toolkit.io.api.JvmPaths;
 import com.eriklievaart.toolkit.io.api.ini.IniNode;
 import com.eriklievaart.toolkit.io.api.ini.IniNodeIO;
@@ -24,10 +22,10 @@ public class LinkIO {
 		log.info("Config file: " + LINKS_FILE);
 	}
 
-	public static void store(List<Link> links) throws IOException {
+	public static void store(List<Link> links) {
 		createBackup();
 
-		List<IniNode> nodes = new ArrayList<IniNode>();
+		List<IniNode> nodes = new ArrayList<>();
 
 		for (Link link : links) {
 			IniNode node = new IniNode("link");
@@ -45,16 +43,16 @@ public class LinkIO {
 		IniNodeIO.write(nodes, LINKS_FILE);
 	}
 
-	private static void createBackup() throws IOException {
+	private static void createBackup() {
 		if (LINKS_FILE.exists()) {
 			BACKUP_DIR.mkdirs();
 			File stamped = new File(BACKUP_DIR, "links-" + System.currentTimeMillis() + ".ini");
 			log.info("creating backup %", stamped);
-			FileUtils.copyFile(LINKS_FILE, stamped);
+			FileTool.copyFile(LINKS_FILE, stamped);
 		}
 	}
 
-	public static List<Link> load() throws IOException {
+	public static List<Link> load() {
 		List<Link> links = NewCollection.list();
 
 		for (IniNode node : IniNodeIO.read(LINKS_FILE)) {

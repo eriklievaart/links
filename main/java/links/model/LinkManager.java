@@ -1,14 +1,14 @@
 package links.model;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import com.eriklievaart.toolkit.logging.api.LogTemplate;
+import com.eriklievaart.toolkit.io.api.RuntimeIOException;
 import com.eriklievaart.toolkit.lang.api.ObservableDelegate;
 import com.eriklievaart.toolkit.lang.api.check.Check;
 import com.eriklievaart.toolkit.lang.api.collection.NewCollection;
+import com.eriklievaart.toolkit.logging.api.LogTemplate;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -20,7 +20,7 @@ public class LinkManager extends ObservableDelegate {
 	public LinkManager() {
 		try {
 			load();
-		} catch (IOException e) {
+		} catch (RuntimeIOException e) {
 			log.warn("Unable to load link configuration");
 		}
 	}
@@ -33,7 +33,7 @@ public class LinkManager extends ObservableDelegate {
 		changeAndnotifyObservers();
 	}
 
-	private void load() throws IOException {
+	private void load() {
 		links.addAll(LinkIO.load());
 		Collections.sort(links);
 		changeAndnotifyObservers();
@@ -46,7 +46,7 @@ public class LinkManager extends ObservableDelegate {
 	private void store() {
 		try {
 			LinkIO.store(links);
-		} catch (IOException e) {
+		} catch (RuntimeIOException e) {
 			log.warn("Unable to store links; $", e, e.getMessage());
 		}
 	}
