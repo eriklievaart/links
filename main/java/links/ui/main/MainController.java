@@ -12,6 +12,10 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import com.eriklievaart.toolkit.swing.api.menu.ReflectionActionBuilder;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+
 import links.model.Link;
 import links.model.LinkManager;
 import links.ui.listener.CategoryListListener;
@@ -21,10 +25,6 @@ import links.ui.main.action.EditLinkAction;
 import links.ui.main.action.PasswordLinkAction;
 import links.ui.main.action.RemoveLinkAction;
 import links.ui.observer.ListObserver;
-
-import com.eriklievaart.toolkit.swing.api.menu.ReflectionActionBuilder;
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
 
 @Singleton
 public class MainController {
@@ -43,7 +43,7 @@ public class MainController {
 		frame.setTitle("Links");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		initContentPane(frame, initListPanel(components));
+		initContentPane(frame, initListPanel());
 	}
 
 	private void initContentPane(JFrame frame, JPanel listPanel) {
@@ -52,7 +52,7 @@ public class MainController {
 		container.add(initButtonPanel(), BorderLayout.SOUTH);
 	}
 
-	private JPanel initListPanel(MainComponents components) {
+	private JPanel initListPanel() {
 		JPanel listPanel = components.getListPanel();
 		listPanel.add(new JScrollPane(components.getCategoryList()));
 		listPanel.add(new JScrollPane(components.getLinkList()));
@@ -147,6 +147,9 @@ public class MainController {
 			if (links.get(i).getName().equals(name)) {
 				return i;
 			}
+		}
+		if (links.size() > 0) {
+			return 0;
 		}
 		return -1;
 	}
