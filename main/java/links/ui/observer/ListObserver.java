@@ -62,5 +62,4 @@ public class ListObserver implements Observer {
 		}
 		return 0;
 	}
-
 }

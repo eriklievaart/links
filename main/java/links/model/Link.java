@@ -69,5 +69,4 @@ public class Link implements Comparable<Link> {
 	public String toString() {
 		return name;
 	}
-
 }

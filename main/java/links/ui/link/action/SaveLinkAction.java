@@ -26,7 +26,7 @@ public class SaveLinkAction {
 		link.setUser(user);
 		link.setPassword(password);
 		manager.add(link);
-		
+
 		components.getJFrame().setVisible(false);
 	}
 }

@@ -17,5 +17,4 @@ public class AddLinkAction {
 	public void addLink() {
 		editController.add(components.getCategoryList().getSelectedValue());
 	}
-
 }

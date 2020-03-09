@@ -1,6 +1,9 @@
 package links.ui.link;
 
 import java.io.File;
+import java.util.function.Consumer;
+
+import javax.swing.JOptionPane;
 
 import com.eriklievaart.toolkit.io.api.SystemClipboard;
 import com.eriklievaart.toolkit.io.api.CheckFile;
@@ -32,14 +35,18 @@ public class LinkOpener {
 	}
 
 	public void chrome() {
-		Link link = prepareLink();
-		if (link != null) {
-			openChrome(link);
-		}
+		execute(link -> Browser.chromeOpen(link.getUrl()));
 	}
 
-	private void openChrome(Link link) {
-		Browser.chromeOpen(link.getUrl());
+	public void firefox() {
+		execute(link -> Browser.firefoxOpen(link.getUrl()));
+	}
+
+	private void execute(Consumer<Link> consumer) {
+		Link link = prepareLink();
+		if (link != null) {
+			consumer.accept(link);
+		}
 	}
 
 	private Link prepareLink() {
@@ -60,7 +67,7 @@ public class LinkOpener {
 			String path = link.getUrl().replaceFirst("file:/++", "/");
 			CheckFile.isFile(new File(path));
 			log.info("File % exists", path);
-			return new Link(link.getName(), "file://" +path);
+			return new Link(link.getName(), "file://" + path);
 		}
 		throw new FormattedException("invalid protocol for link %", link.getUrl());
 	}
@@ -68,5 +75,4 @@ public class LinkOpener {
 	public void password() {
 		prepareLink();
 	}
-
 }

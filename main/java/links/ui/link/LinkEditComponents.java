@@ -72,11 +72,11 @@ public class LinkEditComponents {
 	public JTextField getPasswordField() {
 		return passwordField;
 	}
-	
+
 	public JLabel getUserLabel() {
 		return userLabel;
 	}
-	
+
 	public JTextField getUserField() {
 		return userField;
 	}

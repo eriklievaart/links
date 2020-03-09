@@ -19,7 +19,7 @@ public class PreviewLinkAction {
 		Link link = new Link(components.getNameField().getText(), components.getUrlField().getText());
 		link.setUser(components.getUserField().getText());
 		link.setPassword(components.getPasswordField().getText());
-		
+
 		selected.browser(link);
 	}
 }
