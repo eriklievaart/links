@@ -42,6 +42,10 @@ public class LinkOpener {
 		execute(link -> Browser.firefoxOpen(link.getUrl()));
 	}
 
+	public void iexplore() {
+		execute(link -> Browser.iexploreOpen(link.getUrl()));
+	}
+
 	private void execute(Consumer<Link> consumer) {
 		Link link = prepareLink();
 		if (link != null) {

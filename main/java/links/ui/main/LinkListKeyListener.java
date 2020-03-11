@@ -28,6 +28,9 @@ public class LinkListKeyListener implements KeyListener {
 		if (isControlAlt(e, KeyEvent.VK_F)) {
 			selected.firefox();
 		}
+		if (isControlAlt(e, KeyEvent.VK_I)) {
+			selected.iexplore();
+		}
 		if (isControlAlt(e, KeyEvent.VK_P)) {
 			selected.password();
 		}

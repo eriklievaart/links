@@ -3,12 +3,9 @@ package links.runtime;
 import java.awt.Desktop;
 import java.net.URI;
 
-import javax.swing.JOptionPane;
-
 import com.eriklievaart.toolkit.io.api.SystemProperties;
 import com.eriklievaart.toolkit.runtime.api.CliCommand;
 import com.eriklievaart.toolkit.runtime.api.CliInvoker;
-import com.eriklievaart.toolkit.swing.api.SwingThread;
 
 public class Browser {
 
@@ -19,6 +16,9 @@ public class Browser {
 	private static final String FIREFOX_WINDOWS = "C:/Program\\wFiles/Mozilla\\wFirefox/firefox.exe";
 	private static final String FIREFOX_LINUX = "????";
 	private static final String FIREFOX = osSwitch(FIREFOX_LINUX, FIREFOX_WINDOWS);
+
+	private static final String IEXPLORE = "C:/Program\\wFiles/internet\\wexplorer/iexplore.exe";
+
 
 	public static void desktopBrowse(String url) {
 		try {
@@ -34,6 +34,10 @@ public class Browser {
 
 	public static void firefoxOpen(final String url) {
 		openWithExecutable(url, FIREFOX);
+	}
+
+	public static void iexploreOpen(final String url) {
+		openWithExecutable(url, IEXPLORE);
 	}
 
 	private static void openWithExecutable(final String url, String executable) {
