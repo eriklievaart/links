@@ -3,14 +3,11 @@ package links.ui.link;
 import java.io.File;
 import java.util.function.Consumer;
 
-import javax.swing.JOptionPane;
-
-import com.eriklievaart.toolkit.io.api.SystemClipboard;
 import com.eriklievaart.toolkit.io.api.CheckFile;
+import com.eriklievaart.toolkit.io.api.SystemClipboard;
 import com.eriklievaart.toolkit.lang.api.FormattedException;
 import com.eriklievaart.toolkit.lang.api.str.Str;
 import com.eriklievaart.toolkit.logging.api.LogTemplate;
-
 import com.google.inject.Inject;
 
 import links.model.Link;
