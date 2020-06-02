@@ -2,13 +2,13 @@ package com.eriklievaart.links.boot;
 
 import java.io.File;
 
-import links.ui.main.MainController;
-
 import com.eriklievaart.toolkit.io.api.JvmPaths;
 import com.eriklievaart.toolkit.swing.api.SwingThread;
 import com.eriklievaart.toolkit.swing.api.WindowSaver;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+
+import links.ui.main.MainController;
 
 public class Main {
 

@@ -14,11 +14,10 @@ public class Browser {
 	private static final String CHROME = osSwitch(CHROME_LINUX, CHROME_WINDOWS);
 
 	private static final String FIREFOX_WINDOWS = "C:/Program\\wFiles/Mozilla\\wFirefox/firefox.exe";
-	private static final String FIREFOX_LINUX = "????";
+	private static final String FIREFOX_LINUX = "/usr/bin/firefox";
 	private static final String FIREFOX = osSwitch(FIREFOX_LINUX, FIREFOX_WINDOWS);
 
 	private static final String IEXPLORE = "C:/Program\\wFiles/internet\\wexplorer/iexplore.exe";
-
 
 	public static void desktopBrowse(String url) {
 		try {
