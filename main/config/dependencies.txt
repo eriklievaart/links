@@ -4,3 +4,6 @@ toolkit @local @snapshot
 commons-io commons-io 2.4
 guice com.google.inject 1.0
 
+[test]
+junit junit 4.7
+

@@ -5,6 +5,7 @@ import java.io.File;
 import com.eriklievaart.toolkit.io.api.JvmPaths;
 import com.eriklievaart.toolkit.swing.api.SwingThread;
 import com.eriklievaart.toolkit.swing.api.WindowSaver;
+import com.eriklievaart.toolkit.swing.api.laf.LookAndFeel;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -16,6 +17,7 @@ public class Main {
 		SwingThread.invokeAndWaitUnchecked(new Runnable() {
 			@Override
 			public void run() {
+				LookAndFeel.instance().load();
 				String jarDir = JvmPaths.getJarDirOrRunDir(Main.class);
 				WindowSaver.initialize(new File(jarDir, "windows.ini"));
 				Injector injector = Guice.createInjector();
