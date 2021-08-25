@@ -15,11 +15,16 @@ import com.eriklievaart.toolkit.logging.api.LogTemplate;
 public class LinkIO {
 	private static final LogTemplate log = new LogTemplate(LinkIO.class);
 
+	private static final File GIT_FILE = new File(System.getProperty("user.home"), "Development/git/cheat/links.ini");
 	private static final File LINKS_FILE = new File(JvmPaths.getJarDirOrRunDir(LinkIO.class), "links.ini");
 	private static final File BACKUP_DIR = new File(LINKS_FILE.getParentFile(), "bak");
 
 	static {
-		log.info("Config file: " + LINKS_FILE);
+		log.info("Config file: " + getLinksFile());
+	}
+
+	public static File getLinksFile() {
+		return GIT_FILE.exists() ? GIT_FILE : LINKS_FILE;
 	}
 
 	public static void store(List<Link> links) {
@@ -40,11 +45,11 @@ public class LinkIO {
 			}
 			nodes.add(node);
 		}
-		IniNodeIO.write(nodes, LINKS_FILE);
+		IniNodeIO.write(nodes, getLinksFile());
 	}
 
 	private static void createBackup() {
-		if (LINKS_FILE.exists()) {
+		if (!GIT_FILE.exists() && LINKS_FILE.exists()) {
 			BACKUP_DIR.mkdirs();
 			File stamped = new File(BACKUP_DIR, "links-" + System.currentTimeMillis() + ".ini");
 			log.info("creating backup %", stamped);
@@ -55,7 +60,7 @@ public class LinkIO {
 	public static List<Link> load() {
 		List<Link> links = NewCollection.list();
 
-		for (IniNode node : IniNodeIO.read(LINKS_FILE)) {
+		for (IniNode node : IniNodeIO.read(getLinksFile())) {
 			String name = node.getProperty("name");
 			String category = node.getProperty("category");
 			String url = node.getProperty("url");
