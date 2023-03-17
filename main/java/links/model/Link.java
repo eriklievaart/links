@@ -16,7 +16,7 @@ public class Link implements Comparable<Link> {
 	}
 
 	public Link(String name, String url, String category) {
-		Check.notNull(name, url, category);
+		Check.noneNull(name, url, category);
 		this.name = name;
 		this.url = url;
 		this.category = category;
